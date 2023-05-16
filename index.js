@@ -24,7 +24,7 @@ app.use(express.json());
 app.use(cors({
     origin: [
         "http://localhost:3000",
-        "https://thambapanni-app.onrender.com"
+        "https://thambapanni.onrender.com"
     ]
 }));
 
