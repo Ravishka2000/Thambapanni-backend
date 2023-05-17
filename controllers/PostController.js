@@ -6,7 +6,7 @@ import { response } from "express";
 
 const createPost = asyncHandler(async (req, res) => {
     try {
-        const { title, description, image, user, location } = req.body;
+        const { title, description, image, user } = req.body;
         //validation
         if (!title || !description || !image ) {
             return res.status(400).send({
@@ -24,7 +24,7 @@ const createPost = asyncHandler(async (req, res) => {
             });
         }
 
-        const newBlog = new Post({ title, description, image, user, location });
+        const newBlog = new Post({ title, description, image, user });
         const session = await mongoose.startSession();
         session.startTransaction();
         await newBlog.save({ session });
