@@ -18,9 +18,6 @@ const postSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: "User",
     },
-    location: {
-        type: String,
-    },
     ratings: [{
         user: {
             type: Schema.Types.ObjectId,
